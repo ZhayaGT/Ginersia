@@ -32,13 +32,25 @@ public class BallAudio : MonoBehaviour
     // Variabel internal
     private float lastImpactTime;
 
+    private CameraShaker cameraShaker;
+
+    // --- BARU: PENGATURAN SCREENSHAKE ---
+    [Header("Pengaturan ScreenShake")]
+    public float shakeDuration = 0.1f; // Durasi getaran
+    public float minShakeStrength = 0.1f; // Kekuatan getar saat benturan pelan
+    public float maxShakeStrength = 0.5f; // Kekuatan getar saat benturan keras
+
+    [System.Obsolete]
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
 
-        // --- Setup untuk Suara Rolling (Penting) ---
-        // Kita butuh AudioSource kedua khusus untuk loop rolling
+        cameraShaker = FindObjectOfType<CameraShaker>();
+        if (cameraShaker == null)
+        {
+            Debug.LogWarning("CameraShaker tidak ditemukan di scene!");
+        }
         // agar tidak bentrok dengan suara impact (one-shot)
         rollingAudioSource = gameObject.AddComponent<AudioSource>();
         rollingAudioSource.clip = rollingClip;
@@ -80,35 +92,37 @@ public class BallAudio : MonoBehaviour
     // Fungsi ini dipanggil oleh fisika Unity
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Cek kekuatan benturan
         float impactMagnitude = collision.relativeVelocity.magnitude;
 
-        // Cek 3 hal:
-        // 1. Apakah benturan cukup keras? (Velocity Threshold)
-        // 2. Apakah jeda waktu sudah lewat? (Cooldown)
-        // 3. Apakah kita punya audio clip-nya?
+        // Cek jika benturan cukup keras DAN cooldown sudah lewat
         if (impactMagnitude > minImpactVelocity && 
-            Time.time > lastImpactTime + impactCooldown && 
-            impactClip != null)
+            Time.time > lastImpactTime + impactCooldown)
         {
-            // Tandai waktu benturan ini
+            // Tandai waktu benturan
             lastImpactTime = Time.time;
-
-            // --- Trik "Feel": Volume & Pitch Dinamis ---
-
-            // 1. Atur Volume berdasarkan kekuatan benturan
-            // Normalisasi kekuatan benturan (0.0 - 1.0)
-            float t = Mathf.InverseLerp(minImpactVelocity, maxRollingSpeed, impactMagnitude);
-            float dynamicVolume = Mathf.Lerp(0.1f, impactVolume, t);
-
-            // 2. Acak Pitch sedikit agar tidak monoton
-            float randomPitch = Random.Range(0.95f, 1.05f);
-
-            // Set pitch SEBELUM memainkan
-            audioSource.pitch = randomPitch;
             
-            // Mainkan suara "KLAK!" satu kali
-            audioSource.PlayOneShot(impactClip, dynamicVolume);
+            // --- Logika Audio (dari skrip lama) ---
+            if (impactClip != null)
+            {
+                float t = Mathf.InverseLerp(minImpactVelocity, maxRollingSpeed, impactMagnitude);
+                float dynamicVolume = Mathf.Lerp(0.1f, impactVolume, t);
+                float randomPitch = Random.Range(0.95f, 1.05f);
+                audioSource.pitch = randomPitch;
+                audioSource.PlayOneShot(impactClip, dynamicVolume);
+            }
+
+            // --- BARU: LOGIKA SCREENSHAKE ---
+            if (cameraShaker != null)
+            {
+                // Gunakan 't' yang sama dari kalkulasi audio
+                float t = Mathf.InverseLerp(minImpactVelocity, maxRollingSpeed, impactMagnitude);
+                
+                // Hitung kekuatan shake berdasarkan kekuatan benturan
+                float dynamicShakeStrength = Mathf.Lerp(minShakeStrength, maxShakeStrength, t);
+                
+                // Panggil fungsi shake di kamera
+                cameraShaker.TriggerShake(dynamicShakeStrength, shakeDuration);
+            }
         }
     }
 }

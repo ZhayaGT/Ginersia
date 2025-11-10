@@ -12,6 +12,8 @@ public class FinishZone : MonoBehaviour
     // --- BARU ---
     [Header("Audio")]
     public AudioClip finishJingle; // Drag SFX jingle kemenangan ke sini
+    [SerializeField] private LevelTimer levelTimer; // Drag LevelTimer ke sini
+    [SerializeField] private LevelStarManager starManager;
 
     private const string PLAYER_TAG = "Player";
     private bool hasFinished = false;
@@ -32,15 +34,23 @@ public class FinishZone : MonoBehaviour
         {
             hasFinished = true;
             Debug.Log("LEVEL SELESAI! Bola telah mencapai finish.");
-            
+
             // --- BARU ---
             // Mainkan suara finish
             if (finishJingle != null)
             {
                 audioSource.PlayOneShot(finishJingle);
             }
+            
+            if (levelTimer != null)
+            {
+                levelTimer.StopTimer();
+            }
 
-            // (Sisa logika Anda...)
+            if (starManager != null)
+            {
+                starManager.SaveCurrentStarsToPrefs();
+            }
             
             Rigidbody2D ballRb = other.GetComponent<Rigidbody2D>();
             if (ballRb != null)

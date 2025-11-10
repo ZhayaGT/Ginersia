@@ -3,43 +3,46 @@ using UnityEngine;
 public class LevelStarManager : MonoBehaviour
 {
     [Header("Pengaturan Level")]
-    // Ini adalah 'key' untuk PlayerPrefs. 
-    // Atur di Inspector (misal: "Level1", "Level2", dst.)
-    public string levelNameKey; 
+    public string levelNameKey; // Tetap dipakai sebagai "key"
 
     private int starsCollectedThisRun = 0;
 
+    // Getter ini masih dipakai oleh LevelResultDisplay
+    public int GetCurrentRunStars()
+    {
+        return starsCollectedThisRun;
+    }
+
     void Start()
     {
-        // Mulai hitungan dari 0 setiap kali level dimulai
+        // Selalu reset hitungan di awal level
         starsCollectedThisRun = 0;
+        
+        // --- BARU ---
+        // Kita juga reset PlayerPrefs di awal
+        // agar hasil ronde lalu tidak terbawa
+        PlayerPrefs.SetInt(levelNameKey, 0);
     }
 
     // Fungsi ini dipanggil oleh skrip 'Star.cs'
     public void CollectStar()
     {
-        // Tambah hitungan bintang untuk level ini
+        // --- LOGIKA DIPERMUDAH ---
+        // Cukup tambah hitungan. TIDAK ADA PlayerPrefs di sini.
         starsCollectedThisRun++;
         
-        // --- LOGIKA PENYIMPANAN ---
+        // Log sederhana untuk debugging
+        Debug.Log($"Bintang diambil! Total sekarang: {starsCollectedThisRun}");
+    }
 
-        // 1. Cek dulu berapa rekor bintang sebelumnya di level ini
-        //    Jika belum pernah main, default-nya adalah 0
-        int highScor = PlayerPrefs.GetInt(levelNameKey, 0);
-
-        // 2. Jika bintang yang baru kita kumpulkan > rekor lama
-        if (starsCollectedThisRun > highScor)
-        {
-            // Simpan hitungan baru sebagai rekor
-            PlayerPrefs.SetInt(levelNameKey, starsCollectedThisRun);
-            
-            // Sesuai permintaan Anda: Berikan Log
-            Debug.Log($"REKOR BARU DISIMPAN! Level '{levelNameKey}' - {starsCollectedThisRun} Bintang.");
-        }
-        else
-        {
-            // Sesuai permintaan Anda: Berikan Log
-            Debug.Log($"Bintang terkumpul: {starsCollectedThisRun}. (Rekor masih {highScor})");
-        }
+    // --- BARU ---
+    // Fungsi ini akan dipanggil oleh FinishZone
+    public void SaveCurrentStarsToPrefs()
+    {
+        // Simpan hasil DARI RONDE INI ke PlayerPrefs
+        PlayerPrefs.SetInt(levelNameKey, starsCollectedThisRun);
+        PlayerPrefs.Save(); // (Opsional, tapi aman)
+        
+        Debug.Log($"Hasil akhir disimpan ke '{levelNameKey}': {starsCollectedThisRun} bintang.");
     }
 }
