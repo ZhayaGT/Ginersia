@@ -1,0 +1,520 @@
+fileFormatVersion: 2
+guid: 3517f9a41d1329f4db2cde1979c6b158
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 554217012757498381
+    second: FOREST ADVENTURE-2_0
+  - first:
+      213: 7132247191159204074
+    second: FOREST ADVENTURE-2_1
+  - first:
+      213: -513162374033955776
+    second: FOREST ADVENTURE-2_2
+  - first:
+      213: 191924462746671977
+    second: FOREST ADVENTURE-2_3
+  - first:
+      213: -3604942590888064876
+    second: FOREST ADVENTURE-2_4
+  - first:
+      213: 7256550562725519853
+    second: FOREST ADVENTURE-2_5
+  - first:
+      213: 778125289830058618
+    second: FOREST ADVENTURE-2_6
+  - first:
+      213: -2542545811410850795
+    second: FOREST ADVENTURE-2_7
+  - first:
+      213: 1896116865309941306
+    second: FOREST ADVENTURE-2_8
+  - first:
+      213: -2441876389176592763
+    second: FOREST ADVENTURE-2_9
+  - first:
+      213: -8166636990965180312
+    second: FOREST ADVENTURE-2_10
+  - first:
+      213: 3831072412757422952
+    second: FOREST ADVENTURE-2_11
+  - first:
+      213: 8538499822019363715
+    second: FOREST ADVENTURE-2_12
+  - first:
+      213: -8828547929951184340
+    second: FOREST ADVENTURE-2_13
+  - first:
+      213: 4089831707719094200
+    second: FOREST ADVENTURE-2_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FOREST ADVENTURE-2_0
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 162
+        width: 97
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0a83edcf69f0b700800000000000000
+      internalID: 554217012757498381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FOREST ADVENTURE-2_1
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 161
+        width: 137
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae862573805daf260800000000000000
+      internalID: 7132247191159204074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FOREST ADVENTURE-2_2
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 161
+        width: 112
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0442c972a81e0e8f0800000000000000
+      internalID: -513162374033955776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FOREST ADVENTURE-2_3
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 161
+        width: 93
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96b19b1384ad9a200800000000000000
+      internalID: 191924462746671977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FOREST ADVENTURE-2_4
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 161
+        width: 107
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 498c07a30dba8fdc0800000000000000
+      internalID: -3604942590888064876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FOREST ADVENTURE-2_5
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 162
+        width: 112
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de16ae93a4274b460800000000000000
+      internalID: 7256550562725519853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FOREST ADVENTURE-2_6
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 138
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7a811314d47cca00800000000000000
+      internalID: 778125289830058618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FOREST ADVENTURE-2_7
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 0
+        width: 125
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51ce2b53e0017bcd0800000000000000
+      internalID: -2542545811410850795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FOREST ADVENTURE-2_8
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 0
+        width: 135
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3e1d613e3c505a10800000000000000
+      internalID: 1896116865309941306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FOREST ADVENTURE-2_9
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 0
+        width: 93
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58637b59c56bc1ed0800000000000000
+      internalID: -2441876389176592763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FOREST ADVENTURE-2_10
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 0
+        width: 126
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86894f7ece64aae80800000000000000
+      internalID: -8166636990965180312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FOREST ADVENTURE-2_11
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 0
+        width: 113
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 863743fbf04ba2530800000000000000
+      internalID: 3831072412757422952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FOREST ADVENTURE-2_12
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 0
+        width: 119
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38343366958de7670800000000000000
+      internalID: 8538499822019363715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FOREST ADVENTURE-2_13
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 0
+        width: 113
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2adfb0fe62ba7580800000000000000
+      internalID: -8828547929951184340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FOREST ADVENTURE-2_14
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 0
+        width: 92
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bfc9b1f44002c830800000000000000
+      internalID: 4089831707719094200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FOREST ADVENTURE-2_0: 554217012757498381
+      FOREST ADVENTURE-2_1: 7132247191159204074
+      FOREST ADVENTURE-2_10: -8166636990965180312
+      FOREST ADVENTURE-2_11: 3831072412757422952
+      FOREST ADVENTURE-2_12: 8538499822019363715
+      FOREST ADVENTURE-2_13: -8828547929951184340
+      FOREST ADVENTURE-2_14: 4089831707719094200
+      FOREST ADVENTURE-2_2: -513162374033955776
+      FOREST ADVENTURE-2_3: 191924462746671977
+      FOREST ADVENTURE-2_4: -3604942590888064876
+      FOREST ADVENTURE-2_5: 7256550562725519853
+      FOREST ADVENTURE-2_6: 778125289830058618
+      FOREST ADVENTURE-2_7: -2542545811410850795
+      FOREST ADVENTURE-2_8: 1896116865309941306
+      FOREST ADVENTURE-2_9: -2441876389176592763
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
