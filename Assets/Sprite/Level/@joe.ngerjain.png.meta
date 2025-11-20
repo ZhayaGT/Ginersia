@@ -1,0 +1,494 @@
+fileFormatVersion: 2
+guid: 07f7844e9907ad849b865ff354120fa5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2701555256938115431
+    second: '@joe.ngerjain_0'
+  - first:
+      213: 3222947383751872329
+    second: '@joe.ngerjain_1'
+  - first:
+      213: -2582409213708996078
+    second: '@joe.ngerjain_2'
+  - first:
+      213: 5085672930250730518
+    second: '@joe.ngerjain_3'
+  - first:
+      213: 8416970908705233457
+    second: '@joe.ngerjain_4'
+  - first:
+      213: -2006616465306253536
+    second: '@joe.ngerjain_5'
+  - first:
+      213: -6205515177010367277
+    second: '@joe.ngerjain_6'
+  - first:
+      213: -6201744207275463878
+    second: '@joe.ngerjain_7'
+  - first:
+      213: 3827988213165080595
+    second: '@joe.ngerjain_8'
+  - first:
+      213: 8763903080755296983
+    second: '@joe.ngerjain_9'
+  - first:
+      213: 7349662861328265066
+    second: '@joe.ngerjain_10'
+  - first:
+      213: -4143955515399787183
+    second: '@joe.ngerjain_11'
+  - first:
+      213: 904411862613043477
+    second: '@joe.ngerjain_12'
+  - first:
+      213: 5481488772810659247
+    second: '@joe.ngerjain_13'
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: '@joe.ngerjain_0'
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 71
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 761b2e6513add7520800000000000000
+      internalID: 2701555256938115431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@joe.ngerjain_1'
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 6
+        width: 173
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94f0e42d1953abc20800000000000000
+      internalID: 3222947383751872329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@joe.ngerjain_2'
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 0
+        width: 67
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 212fd289080792cd0800000000000000
+      internalID: -2582409213708996078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@joe.ngerjain_3'
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 43
+        width: 114
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61c2a63c590f39640800000000000000
+      internalID: 5085672930250730518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@joe.ngerjain_4'
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 41
+        width: 111
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13a1c2a42761fc470800000000000000
+      internalID: 8416970908705233457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@joe.ngerjain_5'
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 43
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02788f0d4f01724e0800000000000000
+      internalID: -2006616465306253536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@joe.ngerjain_6'
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 42
+        width: 114
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d4700223d491e9a0800000000000000
+      internalID: -6205515177010367277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@joe.ngerjain_7'
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 0
+        width: 116
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3b6281708afee9a0800000000000000
+      internalID: -6201744207275463878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@joe.ngerjain_8'
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 41
+        width: 112
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31046129ffebf1530800000000000000
+      internalID: 3827988213165080595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@joe.ngerjain_9'
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 43
+        width: 80
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dafe563b63af9970800000000000000
+      internalID: 8763903080755296983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@joe.ngerjain_10'
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 0
+        width: 68
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6f2a54ae6f3ff560800000000000000
+      internalID: 7349662861328265066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@joe.ngerjain_11'
+      rect:
+        serializedVersion: 2
+        x: 1018
+        y: 41
+        width: 118
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15d23931a66bd76c0800000000000000
+      internalID: -4143955515399787183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@joe.ngerjain_12'
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 42
+        width: 54
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51923b91ccd1d8c00800000000000000
+      internalID: 904411862613043477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '@joe.ngerjain_13'
+      rect:
+        serializedVersion: 2
+        x: 1204
+        y: 43
+        width: 112
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa5dba72ff8221c40800000000000000
+      internalID: 5481488772810659247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      '@joe.ngerjain_0': 2701555256938115431
+      '@joe.ngerjain_1': 3222947383751872329
+      '@joe.ngerjain_10': 7349662861328265066
+      '@joe.ngerjain_11': -4143955515399787183
+      '@joe.ngerjain_12': 904411862613043477
+      '@joe.ngerjain_13': 5481488772810659247
+      '@joe.ngerjain_2': -2582409213708996078
+      '@joe.ngerjain_3': 5085672930250730518
+      '@joe.ngerjain_4': 8416970908705233457
+      '@joe.ngerjain_5': -2006616465306253536
+      '@joe.ngerjain_6': -6205515177010367277
+      '@joe.ngerjain_7': -6201744207275463878
+      '@joe.ngerjain_8': 3827988213165080595
+      '@joe.ngerjain_9': 8763903080755296983
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

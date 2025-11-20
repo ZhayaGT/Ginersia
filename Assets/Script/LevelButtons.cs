@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using DG.Tweening; 
 using UnityEngine.UI; 
 using TMPro; 
-using System.Collections.Generic; // Diperlukan untuk List atau IEnumerable
+using System.Collections.Generic; 
 
 public class LevelButtons : MonoBehaviour
 {
@@ -19,14 +19,15 @@ public class LevelButtons : MonoBehaviour
     public Ease showEase = Ease.OutBack;
     
     [Header("Pengaturan Retry")]
+    // --- BARU: BOOLEAN KONTROL ---
+    [Tooltip("Jika True, map akan berputar 180° sebelum reload. Jika False, langsung reload scene.")]
+    public bool animateRetryTransition = true; // Default TRUE
+    // --- AKHIR BARU ---
     [Tooltip("Drag script MapContinuousRotation Anda ke sini")]
     public MapContinuousRotation mapRotationController;
     [Tooltip("Durasi rotasi 180 derajat sebelum restart")]
     public float retryRotationDuration = 0.5f;
-    
-    // --- BARU: ARRAY UNTUK HIDE OBJECTS ---
-    [Header("Objects to Hide on Retry")]
-    [Tooltip("Object yang akan di-hide (SetActive(false)) sebelum rotasi map dimulai. Contoh: Bola, UI Timer, Score Display.")]
+    [Tooltip("Objects to Hide on Retry")]
     public GameObject[] objectsToHideBeforeRetry;
 
     [Header("Koneksi Level")]
@@ -36,12 +37,11 @@ public class LevelButtons : MonoBehaviour
 
     void Awake()
     {
-        // Pastikan kedua tombol sudah diisi
+        // ... (Awake logic remains the same) ...
         if (nextButton != null && retryButton != null)
         {
             originalScale = nextButton.transform.localScale;
             
-            // Atur skala awal ke nol dan pastikan GameObjects aktif
             nextButton.transform.localScale = Vector3.zero;
             retryButton.transform.localScale = Vector3.zero;
             nextButton.SetActive(true);
@@ -54,7 +54,7 @@ public class LevelButtons : MonoBehaviour
         ShowButtonsAnimated();
     }
 
-    // --- LOGIKA ANIMASI SHOW ---
+    // --- LOGIKA ANIMASI SHOW (Sama) ---
 
     public void ShowButtonsAnimated()
     {
@@ -64,13 +64,11 @@ public class LevelButtons : MonoBehaviour
 
         showSequence.AppendInterval(initialDelay);
 
-        // Animasi Tombol Retry
         showSequence.Append(
             retryButton.transform.DOScale(originalScale, showDuration)
                        .SetEase(showEase)
         );
 
-        // Animasi Tombol Next
         showSequence.Append(
             nextButton.transform.DOScale(originalScale, showDuration)
                        .SetEase(showEase)
@@ -95,37 +93,46 @@ public class LevelButtons : MonoBehaviour
 
     public void OnRetryClicked()
     {
-        // 1. NONAKTIFKAN semua object yang ditunjuk
+        // 1. NONAKTIFKAN semua object yang ditunjuk (tetap dilakukan)
         HideObjects();
 
         // 2. Nonaktifkan interaksi tombol
         SetButtonsInteractable(false);
         
-        // 3. Cek apakah controller map tersedia
-        if (mapRotationController == null)
+        // --- LOGIKA BARU: Cek Boolean Kontrol ---
+        if (animateRetryTransition)
         {
-            Debug.LogError("Map Rotation Controller belum di-link! Restart langsung.");
-            ReloadCurrentScene();
-            return;
+            // Jalankan animasi (LOGIKA LAMA)
+            
+            if (mapRotationController == null)
+            {
+                Debug.LogError("Map Rotation Controller belum di-link! Restart langsung.");
+                ReloadCurrentScene();
+                return;
+            }
+
+            Transform mapTransform = mapRotationController.transform;
+            Vector3 currentRotation = mapTransform.eulerAngles;
+            float targetYRotation = currentRotation.y + 180f; 
+
+            Debug.Log("Memulai rotasi 180 derajat untuk Retry...");
+
+            // Animasi Rotasi, lalu panggil ReloadCurrentScene di OnComplete
+            mapTransform.DORotate(
+                new Vector3(currentRotation.x, targetYRotation, currentRotation.z),
+                retryRotationDuration,
+                RotateMode.FastBeyond360
+            )
+            .SetEase(Ease.InOutSine)
+            .OnComplete(ReloadCurrentScene); 
         }
-
-        // 4. Ambil Transform map yang akan diputar
-        Transform mapTransform = mapRotationController.transform;
-
-        // 5. Hitung target rotasi 180 derajat tambahan
-        Vector3 currentRotation = mapTransform.eulerAngles;
-        float targetYRotation = currentRotation.y + 180f; 
-
-        Debug.Log("Memulai rotasi 180 derajat untuk Retry...");
-
-        // 6. Animasi Rotasi
-        mapTransform.DORotate(
-            new Vector3(currentRotation.x, targetYRotation, currentRotation.z),
-            retryRotationDuration,
-            RotateMode.FastBeyond360
-        )
-        .SetEase(Ease.InOutSine)
-        .OnComplete(ReloadCurrentScene); 
+        else
+        {
+            // Jika FALSE, lewati animasi dan langsung reload scene
+            Debug.Log("Animasi Retry dimatikan. Langsung memuat ulang scene.");
+            ReloadCurrentScene();
+        }
+        // --- AKHIR LOGIKA BARU ---
     }
 
     // Fungsi pembantu untuk memuat ulang scene
@@ -136,7 +143,7 @@ public class LevelButtons : MonoBehaviour
         SceneManager.LoadScene(currentSceneName);
     }
     
-    // --- FUNGSI BARU UNTUK HIDE OBJECTS ---
+    // Fungsi pembantu untuk hide objects
     private void HideObjects()
     {
         if (objectsToHideBeforeRetry == null) return;
