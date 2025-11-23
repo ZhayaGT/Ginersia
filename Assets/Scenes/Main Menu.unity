@@ -1995,6 +1995,7 @@ GameObject:
   - component: {fileID: 989782252}
   - component: {fileID: 989782251}
   - component: {fileID: 989782250}
+  - component: {fileID: 989782253}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -2014,6 +2015,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdd603dfd5ca43a46b5bd3e6ecbd76e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxVolume: 0.8
+  crossFadeDuration: 2
 --- !u!82 &989782251
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2025,7 +2028,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 9b1d3c1d8db0bd341baacf9ffa761e2e, type: 3}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.3
   m_Pitch: 1
@@ -2126,6 +2129,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &989782253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989782249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcba08527cb52a448b7429a05b592c77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  themeMusic: {fileID: 8300000, guid: 9b1d3c1d8db0bd341baacf9ffa761e2e, type: 3}
 --- !u!1 &1171889214
 GameObject:
   m_ObjectHideFlags: 0

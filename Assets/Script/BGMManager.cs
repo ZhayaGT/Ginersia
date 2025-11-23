@@ -1,61 +1,87 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using DG.Tweening;
 
-[RequireComponent(typeof(AudioSource))]
 public class BGMManager : MonoBehaviour
 {
-    // Instance statis ini memastikan hanya ada satu BGMManager di scene
     public static BGMManager Instance;
 
-    private AudioSource audioSource;
+    [Header("Pengaturan")]
+    [Range(0f, 1f)] public float maxVolume = 0.5f; 
+    public float crossFadeDuration = 2.0f; 
+
+    private AudioSource sourceA;
+    private AudioSource sourceB;
+    private bool isSourceAActive = true;
 
     void Awake()
     {
-        // --- Pola Singleton ---
         if (Instance == null)
         {
-            // Jika belum ada instance, jadikan objek ini instance-nya
             Instance = this;
-            
-            // PENTING: Jangan hancurkan objek ini saat scene berganti
             DontDestroyOnLoad(gameObject);
+            
+            sourceA = gameObject.AddComponent<AudioSource>();
+            sourceB = gameObject.AddComponent<AudioSource>();
+            
+            SetupSource(sourceA);
+            SetupSource(sourceB);
         }
         else
         {
-            // Jika sudah ada instance lain, hancurkan objek yang baru ini
             Destroy(gameObject);
+        }
+    }
+
+    private void SetupSource(AudioSource source)
+    {
+        source.loop = true;
+        source.playOnAwake = false;
+        source.volume = 0f; 
+    }
+
+    // Fungsi dipanggil saat Scene Baru mulai (SceneMusicSetup)
+    public void PlayMusic(AudioClip newClip)
+    {
+        if (newClip == null) return;
+
+        AudioSource activeSource = isSourceAActive ? sourceA : sourceB;
+        AudioSource newSource = isSourceAActive ? sourceB : sourceA;
+
+        // Jika lagunya sama, tapi volumenya 0 (karena habis di-fade out), naikkan lagi
+        if (activeSource.clip == newClip)
+        {
+            if (!activeSource.isPlaying) activeSource.Play();
+            activeSource.DOFade(maxVolume, crossFadeDuration).SetEase(Ease.Linear);
             return;
         }
 
-        audioSource = GetComponent<AudioSource>();
-    }
+        // Setup Source Baru (Fade In)
+        newSource.clip = newClip;
+        newSource.volume = 0f; // Mulai dari 0
+        newSource.Play();
+        newSource.DOFade(maxVolume, crossFadeDuration).SetEase(Ease.Linear);
 
-    void Start()
-    {
-        // Atur agar musik diputar berulang
-        audioSource.loop = true;
-
-        // Cek jika musik belum diputar (agar tidak mengganggu debugging)
-        if (!audioSource.isPlaying)
+        // Matikan Source Lama (Fade Out)
+        if (activeSource.isPlaying)
         {
-            audioSource.Play();
+            activeSource.DOFade(0f, crossFadeDuration).SetEase(Ease.Linear).OnComplete(() => {
+                activeSource.Stop();
+            });
         }
-    }
-    
-    // Fungsi opsional untuk mengubah volume atau memutar musik lain
-    public void SetVolume(float volume)
-    {
-        audioSource.volume = volume;
+
+        isSourceAActive = !isSourceAActive;
     }
 
-    // Fungsi untuk memutar klip musik baru
-    public void PlayNewMusic(AudioClip newClip)
+    // --- FUNGSI BARU: FADE OUT SAAT DISSOLVE ---
+    // Dipanggil oleh LevelButtons saat mau pindah scene
+    public void FadeOutCurrentMusic(float duration)
     {
-        if (audioSource.clip != newClip)
+        AudioSource activeSource = isSourceAActive ? sourceA : sourceB;
+        
+        if (activeSource.isPlaying)
         {
-            audioSource.Stop();
-            audioSource.clip = newClip;
-            audioSource.Play();
+            // Fade volume ke 0 sesuai durasi dissolve
+            activeSource.DOFade(0f, duration).SetEase(Ease.Linear);
         }
     }
 }
