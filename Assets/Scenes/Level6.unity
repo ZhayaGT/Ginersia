@@ -5353,7 +5353,7 @@ Transform:
   m_GameObject: {fileID: 203633531}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.18, y: -0.028, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5382,7 +5382,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2f0fd3ae54a1e32458568d69c15c0b48, type: 2}
+  - {fileID: 2100000, guid: e59fe3901985cac458d1ca45f378c4dc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5403,7 +5403,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 3298b2aabd6ad994cb07ee0c1d626325, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4155cb5381aedcb47b9306e905fdcf0b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -11349,14 +11349,63 @@ MonoBehaviour:
   initialDelay: 1
   showDuration: 0.3
   showEase: 27
-  dissolveManager: {fileID: 0}
+  dissolveManager: {fileID: 1766590573}
   mapRotationController: {fileID: 2140293788}
   animateRetryTransition: 1
   rotationDuration: 1
   objectsToHideBeforeRetry:
   - {fileID: 980317366}
   - {fileID: 486343579}
-  nextLevelName: Level5
+  nextLevelName: Level7
+--- !u!1 &1069944035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1069944036}
+  - component: {fileID: 1069944037}
+  m_Layer: 0
+  m_Name: Next Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1069944036
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069944035}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.3113499, y: -3.8352368, z: -0.016685247}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1991366221}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1069944037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069944035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 0
+  sharedProfile: {fileID: 11400000, guid: 01e79b5e75d48e848950c9e365bd9bec, type: 2}
 --- !u!1 &1111287131
 GameObject:
   m_ObjectHideFlags: 0
@@ -11412,7 +11461,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 18d6fa65595d0d9488bc0ab173a78a04, type: 2}
+  - {fileID: 2100000, guid: 78d4d947c0f8e8a4891d81f6e119893d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11433,7 +11482,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: b385df23a312e45418a59bbe21fe3a68, type: 3}
+  m_Sprite: {fileID: 7403472428310335810, guid: 6a3b899c7a621024992ce0e51f029d8f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -12019,7 +12068,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1172327476
 Transform:
   m_ObjectHideFlags: 0
@@ -12565,7 +12614,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1367291964
 Transform:
   m_ObjectHideFlags: 0
@@ -22999,7 +23048,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1753264000
 Transform:
   m_ObjectHideFlags: 0
@@ -23167,7 +23216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1760908963
 Transform:
   m_ObjectHideFlags: 0
@@ -23212,7 +23261,7 @@ Transform:
   m_GameObject: {fileID: 1766590570}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.12, y: -0.08, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -23245,10 +23294,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materialsToDissolve:
-  - {fileID: 2100000, guid: 3f71a1f20cfe4234c8eeefa7b3e5d5a3, type: 2}
-  - {fileID: 2100000, guid: a908c2d994e44c149bc656edb1af7766, type: 2}
+  - {fileID: 2100000, guid: 78d4d947c0f8e8a4891d81f6e119893d, type: 2}
+  - {fileID: 2100000, guid: e59fe3901985cac458d1ca45f378c4dc, type: 2}
   currentLevelVolume: {fileID: 1119837270}
-  nextLevelVolume: {fileID: 0}
+  nextLevelVolume: {fileID: 1069944037}
   sceneLights:
   - {fileID: 1167255151}
   lightFadeInDuration: 1
@@ -24242,6 +24291,7 @@ Transform:
   m_Children:
   - {fileID: 1167255150}
   - {fileID: 1119837271}
+  - {fileID: 1069944036}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2140293785
@@ -24274,7 +24324,7 @@ Transform:
   m_GameObject: {fileID: 2140293785}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06, y: 0.05, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -24328,7 +24378,7 @@ MonoBehaviour:
   - {fileID: 690679171}
   - {fileID: 1861002681}
   - {fileID: 76236734}
-  - {fileID: 0}
+  - {fileID: 623744425}
   objectsToShowOnFlip:
   - {fileID: 1991366219}
   - {fileID: 486343579}

@@ -78,7 +78,7 @@ public class LevelButtons : MonoBehaviour
 
         if (BGMManager.Instance != null)
         {
-            BGMManager.Instance.FadeOutCurrentMusic(musicFadeDuration);
+            BGMManager.Instance.FadeOutAllMusic(musicFadeDuration);
         }
 
         // 1. Putar Map Dulu (Jika ada controller)

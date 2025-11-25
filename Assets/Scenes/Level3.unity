@@ -6405,7 +6405,7 @@ Transform:
   m_GameObject: {fileID: 946878186}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.18, y: -0.028, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13337,7 +13337,6 @@ GameObject:
   - component: {fileID: 1766590571}
   - component: {fileID: 1766590572}
   - component: {fileID: 1766590573}
-  - component: {fileID: 1766590574}
   - component: {fileID: 1766590575}
   m_Layer: 0
   m_Name: Level
@@ -13355,7 +13354,7 @@ Transform:
   m_GameObject: {fileID: 1766590570}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.14, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13388,8 +13387,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materialsToDissolve:
-  - {fileID: 2100000, guid: 20a890dee148fd34dbc39c1030c51e36, type: 2}
   - {fileID: 2100000, guid: c6a4d64d605d5c14c8737b0b17ae870a, type: 2}
+  - {fileID: 2100000, guid: 20a890dee148fd34dbc39c1030c51e36, type: 2}
   currentLevelVolume: {fileID: 310174977}
   nextLevelVolume: {fileID: 1686222738}
   sceneLights:
@@ -13398,19 +13397,6 @@ MonoBehaviour:
   dissolvePropertyName: _Dissolve_amount
   dissolveDurationPerObject: 2
   staggerDelay: 1
---- !u!114 &1766590574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1766590570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcba08527cb52a448b7429a05b592c77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  themeMusic: {fileID: 8300000, guid: 8cb0ae2bb9042e64da5a8ef918cc50ce, type: 3}
 --- !u!114 &1766590575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13423,7 +13409,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcba08527cb52a448b7429a05b592c77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  themeMusic: {fileID: 8300000, guid: 6020514d9e426454c94db1f5f985c3dd, type: 3}
+  themeMusics:
+  - {fileID: 8300000, guid: 6020514d9e426454c94db1f5f985c3dd, type: 3}
+  - {fileID: 8300000, guid: 544aaee2d96fffc40898912c2e07416c, type: 3}
 --- !u!1 &1775479443
 GameObject:
   m_ObjectHideFlags: 0
@@ -14420,7 +14408,7 @@ Transform:
   m_GameObject: {fileID: 2140293785}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.038, y: -0.021, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -1,17 +1,17 @@
 using UnityEngine;
 using DG.Tweening;
+using System.Collections.Generic;
 
 public class BGMManager : MonoBehaviour
 {
     public static BGMManager Instance;
 
     [Header("Pengaturan")]
-    [Range(0f, 1f)] public float maxVolume = 0.5f; 
-    public float crossFadeDuration = 2.0f; 
+    [Range(0f, 1f)] public float maxVolume = 0.5f;
+    public float crossFadeDuration = 2.0f;
 
-    private AudioSource sourceA;
-    private AudioSource sourceB;
-    private bool isSourceAActive = true;
+    // List untuk menyimpan semua AudioSource yang sedang aktif
+    private List<AudioSource> activeSources = new List<AudioSource>();
 
     void Awake()
     {
@@ -19,12 +19,6 @@ public class BGMManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            
-            sourceA = gameObject.AddComponent<AudioSource>();
-            sourceB = gameObject.AddComponent<AudioSource>();
-            
-            SetupSource(sourceA);
-            SetupSource(sourceB);
         }
         else
         {
@@ -32,56 +26,60 @@ public class BGMManager : MonoBehaviour
         }
     }
 
-    private void SetupSource(AudioSource source)
+    // --- FUNGSI UTAMA: Memutar Array Musik ---
+    public void PlayMusicLayers(AudioClip[] newClips)
     {
-        source.loop = true;
-        source.playOnAwake = false;
-        source.volume = 0f; 
-    }
+        if (newClips == null || newClips.Length == 0) return;
 
-    // Fungsi dipanggil saat Scene Baru mulai (SceneMusicSetup)
-    public void PlayMusic(AudioClip newClip)
-    {
-        if (newClip == null) return;
+        // 1. FADE OUT & HAPUS SEMUA MUSIK LAMA
+        // Kita salin list ke array sementara agar aman saat dimodifikasi di dalam loop
+        AudioSource[] oldSources = activeSources.ToArray();
+        activeSources.Clear(); // Kosongkan list utama untuk musik baru
 
-        AudioSource activeSource = isSourceAActive ? sourceA : sourceB;
-        AudioSource newSource = isSourceAActive ? sourceB : sourceA;
-
-        // Jika lagunya sama, tapi volumenya 0 (karena habis di-fade out), naikkan lagi
-        if (activeSource.clip == newClip)
+        foreach (AudioSource source in oldSources)
         {
-            if (!activeSource.isPlaying) activeSource.Play();
-            activeSource.DOFade(maxVolume, crossFadeDuration).SetEase(Ease.Linear);
-            return;
+            if (source != null)
+            {
+                // Fade out volume ke 0
+                source.DOFade(0f, crossFadeDuration).SetEase(Ease.Linear).OnComplete(() => 
+                {
+                    source.Stop();
+                    Destroy(source); // Hancurkan komponen AudioSource setelah selesai
+                });
+            }
         }
 
-        // Setup Source Baru (Fade In)
-        newSource.clip = newClip;
-        newSource.volume = 0f; // Mulai dari 0
-        newSource.Play();
-        newSource.DOFade(maxVolume, crossFadeDuration).SetEase(Ease.Linear);
-
-        // Matikan Source Lama (Fade Out)
-        if (activeSource.isPlaying)
+        // 2. SETUP & FADE IN MUSIK BARU
+        foreach (AudioClip clip in newClips)
         {
-            activeSource.DOFade(0f, crossFadeDuration).SetEase(Ease.Linear).OnComplete(() => {
-                activeSource.Stop();
-            });
-        }
+            if (clip != null)
+            {
+                // Buat AudioSource baru untuk setiap klip
+                AudioSource newSource = gameObject.AddComponent<AudioSource>();
+                newSource.clip = clip;
+                newSource.loop = true;
+                newSource.playOnAwake = false;
+                newSource.volume = 0f; // Mulai dari 0
 
-        isSourceAActive = !isSourceAActive;
+                // Mainkan & Fade In
+                newSource.Play();
+                newSource.DOFade(maxVolume, crossFadeDuration).SetEase(Ease.Linear);
+
+                // Tambahkan ke daftar aktif
+                activeSources.Add(newSource);
+            }
+        }
     }
 
-    // --- FUNGSI BARU: FADE OUT SAAT DISSOLVE ---
-    // Dipanggil oleh LevelButtons saat mau pindah scene
-    public void FadeOutCurrentMusic(float duration)
+    // Fungsi Fade Out untuk Transisi Dissolve (Mematikan semua musik aktif)
+    public void FadeOutAllMusic(float duration)
     {
-        AudioSource activeSource = isSourceAActive ? sourceA : sourceB;
-        
-        if (activeSource.isPlaying)
+        foreach (AudioSource source in activeSources)
         {
-            // Fade volume ke 0 sesuai durasi dissolve
-            activeSource.DOFade(0f, duration).SetEase(Ease.Linear);
+            if (source != null)
+            {
+                source.DOFade(0f, duration).SetEase(Ease.Linear);
+            }
         }
     }
 }
