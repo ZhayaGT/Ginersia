@@ -3,6 +3,10 @@ using System.Collections;
 
 public class SFXLooper : MonoBehaviour
 {
+    [Header("Pengaturan Awal")]
+    [Tooltip("Waktu tunggu sebelum looping dimulai.")]
+    public float startDelay = 1.0f; // Default 1 detik sesuai request
+
     [Header("Pengaturan Loop")]
     [Tooltip("SFX yang akan diputar berulang.")]
     public AudioClip loopingClip;
@@ -17,13 +21,11 @@ public class SFXLooper : MonoBehaviour
     [Range(0f, 1f)]
     public float volume = 1f;
 
-    // AudioSource yang akan digunakan untuk memutar SFX
     private AudioSource audioSource;
     private Coroutine loopCoroutine;
 
     void Awake()
     {
-        // Ambil AudioSource atau tambahkan jika belum ada
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
@@ -35,12 +37,10 @@ public class SFXLooper : MonoBehaviour
 
     void Start()
     {
+        // Jika Anda ingin ini otomatis jalan saat scene mulai
         StartSFXLoop();
     }
 
-    /// <summary>
-    /// Memulai pemutaran SFX secara berulang.
-    /// </summary>
     public void StartSFXLoop()
     {
         if (loopingClip == null)
@@ -49,42 +49,42 @@ public class SFXLooper : MonoBehaviour
             return;
         }
 
-        // Pastikan loop sebelumnya berhenti
         if (loopCoroutine != null)
         {
             StopCoroutine(loopCoroutine);
         }
         
-        // Mulai coroutine looping
         loopCoroutine = StartCoroutine(ExecuteSFXLoop());
     }
 
     private IEnumerator ExecuteSFXLoop()
     {
+        // --- BARU: TUNGGU DELAY AWAL ---
+        if (startDelay > 0)
+        {
+            yield return new WaitForSeconds(startDelay);
+        }
+        // -------------------------------
+
         int currentLoop = 0;
 
         while (currentLoop < loopCount)
         {
             // 1. Putar SFX
-            // Menggunakan PlayOneShot agar tidak mengganggu dirinya sendiri jika ada tumpang tindih
             audioSource.PlayOneShot(loopingClip, volume);
 
             // 2. Tambah hitungan loop
             currentLoop++;
             
-            // 3. Tunggu
-            // Kita tunggu durasi clip-nya selesai DITAMBAH waktu delay yang disetel.
+            // 3. Tunggu durasi clip + interval
             float waitTime = loopingClip.length + delayBetweenLoops;
             yield return new WaitForSeconds(waitTime);
         }
         
         Debug.Log($"Looping SFX selesai setelah {loopCount} kali.");
-        loopCoroutine = null; // Reset coroutine reference
+        loopCoroutine = null; 
     }
 
-    /// <summary>
-    /// Menghentikan pemutaran loop SFX.
-    /// </summary>
     public void StopSFXLoop()
     {
         if (loopCoroutine != null)
@@ -96,6 +96,5 @@ public class SFXLooper : MonoBehaviour
         {
             audioSource.Stop();
         }
-        Debug.Log("Looping SFX dihentikan.");
     }
 }
